@@ -26,53 +26,70 @@ msgstr ""
 msgid "BuddyActivist"
 msgstr ""
 
+#: tecosm.php:58
 msgid "Impostazioni Mappa OSM"
 msgstr ""
 
+#: tecosm.php:59
 msgid "Mappa OSM"
 msgstr ""
 
+#: tecosm.php:68
 msgid "Impostazioni The Events Calendar OSM"
 msgstr ""
 
+#: tecosm.php:69
 msgid "Configura i parametri di default per la mappa globale generata dallo shortcode <code>[mappa_eventi_osm]</code>."
 msgstr ""
 
+#: tecosm.php:74
 msgid "Latitudine di partenza"
 msgstr ""
 
+#: tecosm.php:77
 msgid "Es. 41.9028 (Roma)"
 msgstr ""
 
+#: tecosm.php:81
 msgid "Longitudine di partenza"
 msgstr ""
 
+#: tecosm.php:84
 msgid "Es. 12.4964 (Roma)"
 msgstr ""
 
+#: tecosm.php:88
 msgid "Livello di Zoom Iniziale"
 msgstr ""
 
+#: tecosm.php:91
 msgid "Da 1 (Mondo intero) a 19 (Livello strada)"
 msgstr ""
 
+#: tecosm.php:95
 msgid "Altezza Mappa Globale"
 msgstr ""
 
+#: tecosm.php:98
 msgid "Includi l'unità di misura, es. <code>600px</code> o <code>100vh</code>"
 msgstr ""
 
+#: tecosm.php:134
 msgid "URL Icona Mappa (Opzionale)"
 msgstr ""
 
+#: tecosm.php:136
 msgid "Incolla qui l'URL dell'icona (es. dalla Libreria Media). Dimensioni consigliate: 32x32 pixel."
 msgstr ""
 
+#: tecosm.php:144
 msgid "URL Icona Mappa"
 msgstr ""
 
+#: tecosm.php:147
 msgid "Incolla qui l'URL dell'icona. Se lasciato vuoto, verrà usato il Pin blu standard."
 msgstr ""
 
+#: tecosm.php:247
 msgid "Cerca un evento..."
 msgstr ""
