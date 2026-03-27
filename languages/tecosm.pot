@@ -1,0 +1,78 @@
+# Copyright (C) 2026 BuddyActivist
+# This file is distributed under the same license as the The Events Calendar OSM plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: The Events Calendar OSM 2.0.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-03-27T18:00:00+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: Manual\n"
+"X-Domain: tecosm\n"
+
+#. Plugin Name of the plugin
+msgid "The Events Calendar OSM"
+msgstr ""
+
+#. Description of the plugin
+msgid "Sostituisce Google Maps con OSM (TECOSM). Include geocoding automatico, icone personalizzate per categorie, shortcode [mappa_eventi_osm] con clustering e ricerca, e un pannello di configurazione."
+msgstr ""
+
+#. Author of the plugin
+msgid "BuddyActivist"
+msgstr ""
+
+msgid "Impostazioni Mappa OSM"
+msgstr ""
+
+msgid "Mappa OSM"
+msgstr ""
+
+msgid "Impostazioni The Events Calendar OSM"
+msgstr ""
+
+msgid "Configura i parametri di default per la mappa globale generata dallo shortcode <code>[mappa_eventi_osm]</code>."
+msgstr ""
+
+msgid "Latitudine di partenza"
+msgstr ""
+
+msgid "Es. 41.9028 (Roma)"
+msgstr ""
+
+msgid "Longitudine di partenza"
+msgstr ""
+
+msgid "Es. 12.4964 (Roma)"
+msgstr ""
+
+msgid "Livello di Zoom Iniziale"
+msgstr ""
+
+msgid "Da 1 (Mondo intero) a 19 (Livello strada)"
+msgstr ""
+
+msgid "Altezza Mappa Globale"
+msgstr ""
+
+msgid "Includi l'unità di misura, es. <code>600px</code> o <code>100vh</code>"
+msgstr ""
+
+msgid "URL Icona Mappa (Opzionale)"
+msgstr ""
+
+msgid "Incolla qui l'URL dell'icona (es. dalla Libreria Media). Dimensioni consigliate: 32x32 pixel."
+msgstr ""
+
+msgid "URL Icona Mappa"
+msgstr ""
+
+msgid "Incolla qui l'URL dell'icona. Se lasciato vuoto, verrà usato il Pin blu standard."
+msgstr ""
+
+msgid "Cerca un evento..."
+msgstr ""
