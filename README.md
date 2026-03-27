@@ -45,8 +45,9 @@ Se hai già dei Luoghi (Venues) salvati prima di installare questo plugin, Nomin
 Incolla questo shortcode in qualsiasi Pagina, Articolo o Widget del tuo sito per far comparire la mappa generale con tutti gli eventi e la barra di ricerca:
 ```text
 [mappa_eventi_osm]
-
+```
 ## 📝 Changelog
+
 2.0.0
 Integrazione shortcode globale [mappa_eventi_osm].
 
