@@ -46,7 +46,7 @@ Incolla questo shortcode in qualsiasi Pagina, Articolo o Widget del tuo sito per
 ```text
 [mappa_eventi_osm]
 
-📝 Changelog
+## 📝 Changelog
 2.0.0
 Integrazione shortcode globale [mappa_eventi_osm].
 
@@ -67,6 +67,6 @@ Integrazione Nominatim API per il geocoding dei Luoghi.
 
 Custom fields per icone categoria.
 
-⚖️ Licenza
+## ⚖️ Licenza
 Questo progetto è rilasciato sotto licenza GPLv2 o successiva (come WordPress). Leaflet.js e MarkerCluster appartengono ai rispettivi autori.
 
