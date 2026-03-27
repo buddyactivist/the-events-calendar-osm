@@ -1,5 +1,4 @@
-# The Events Calendar OSM (TECOSM)
-
+# The Events Calendar OSM 
 **Versione:** 2.0.0  
 **Autore:** BuddyActivist  
 **Richiede:** WordPress 5.0+, The Events Calendar  
