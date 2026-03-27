@@ -4,10 +4,20 @@
  * Description: Sostituisce Google Maps con OSM (TECOSM). Include geocoding automatico, icone personalizzate per categorie, shortcode [mappa_eventi_osm] con clustering e ricerca, e un pannello di configurazione.
  * Version:     2.0.0
  * Author:      BuddyActivist
+ * Text Domain: tecosm
+ * Domain Path: /languages
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
     exit;
+}
+
+// ==========================================
+// 0. CARICAMENTO LINGUE (i18n)
+// ==========================================
+add_action( 'plugins_loaded', 'tecosm_load_textdomain' );
+function tecosm_load_textdomain() {
+    load_plugin_textdomain( 'tecosm', false, dirname( plugin_basename( __FILE__ ) ) . '/languages' );
 }
 
 // ==========================================
@@ -43,8 +53,8 @@ add_action( 'admin_menu', 'tecosm_add_admin_menu' );
 function tecosm_add_admin_menu() {
     add_submenu_page(
         'edit.php?post_type=tribe_events', 
-        'Impostazioni Mappa OSM',          
-        'Mappa OSM',                       
+        __( 'Impostazioni Mappa OSM', 'tecosm' ),          
+        __( 'Mappa OSM', 'tecosm' ),                       
         'manage_options',                  
         'tecosm-settings',                 
         'tecosm_settings_page_html'        
@@ -55,38 +65,38 @@ function tecosm_settings_page_html() {
     if ( ! current_user_can( 'manage_options' ) ) return;
     ?>
     <div class="wrap">
-        <h1>Impostazioni The Events Calendar OSM</h1>
-        <p>Configura i parametri di default per la mappa globale generata dallo shortcode <code>[mappa_eventi_osm]</code>.</p>
+        <h1><?php esc_html_e( 'Impostazioni The Events Calendar OSM', 'tecosm' ); ?></h1>
+        <p><?php echo wp_kses_post( __( 'Configura i parametri di default per la mappa globale generata dallo shortcode <code>[mappa_eventi_osm]</code>.', 'tecosm' ) ); ?></p>
         
         <form method="post" action="options.php">
             <?php settings_fields( 'tecosm_settings_group' ); ?>
             <table class="form-table">
                 <tr valign="top">
-                    <th scope="row">Latitudine di partenza</th>
+                    <th scope="row"><?php esc_html_e( 'Latitudine di partenza', 'tecosm' ); ?></th>
                     <td>
                         <input type="text" name="tecosm_default_lat" value="<?php echo esc_attr( get_option('tecosm_default_lat', '41.9028') ); ?>" />
-                        <p class="description">Es. 41.9028 (Roma)</p>
+                        <p class="description"><?php esc_html_e( 'Es. 41.9028 (Roma)', 'tecosm' ); ?></p>
                     </td>
                 </tr>
                 <tr valign="top">
-                    <th scope="row">Longitudine di partenza</th>
+                    <th scope="row"><?php esc_html_e( 'Longitudine di partenza', 'tecosm' ); ?></th>
                     <td>
                         <input type="text" name="tecosm_default_lng" value="<?php echo esc_attr( get_option('tecosm_default_lng', '12.4964') ); ?>" />
-                        <p class="description">Es. 12.4964 (Roma)</p>
+                        <p class="description"><?php esc_html_e( 'Es. 12.4964 (Roma)', 'tecosm' ); ?></p>
                     </td>
                 </tr>
                 <tr valign="top">
-                    <th scope="row">Livello di Zoom Iniziale</th>
+                    <th scope="row"><?php esc_html_e( 'Livello di Zoom Iniziale', 'tecosm' ); ?></th>
                     <td>
                         <input type="number" name="tecosm_default_zoom" value="<?php echo esc_attr( get_option('tecosm_default_zoom', '6') ); ?>" min="1" max="19" />
-                        <p class="description">Da 1 (Mondo intero) a 19 (Livello strada)</p>
+                        <p class="description"><?php esc_html_e( 'Da 1 (Mondo intero) a 19 (Livello strada)', 'tecosm' ); ?></p>
                     </td>
                 </tr>
                 <tr valign="top">
-                    <th scope="row">Altezza Mappa Globale</th>
+                    <th scope="row"><?php esc_html_e( 'Altezza Mappa Globale', 'tecosm' ); ?></th>
                     <td>
                         <input type="text" name="tecosm_map_height" value="<?php echo esc_attr( get_option('tecosm_map_height', '600px') ); ?>" />
-                        <p class="description">Includi l'unità di misura, es. <code>600px</code> o <code>100vh</code></p>
+                        <p class="description"><?php echo wp_kses_post( __( 'Includi l\'unità di misura, es. <code>600px</code> o <code>100vh</code>', 'tecosm' ) ); ?></p>
                     </td>
                 </tr>
             </table>
@@ -133,9 +143,9 @@ add_action( 'tribe_events_cat_add_form_fields', 'tecosm_add_category_marker_fiel
 function tecosm_add_category_marker_field() {
     ?>
     <div class="form-field">
-        <label for="tecosm_marker_url">URL Icona Mappa (Opzionale)</label>
+        <label for="tecosm_marker_url"><?php esc_html_e( 'URL Icona Mappa (Opzionale)', 'tecosm' ); ?></label>
         <input type="text" name="tecosm_marker_url" id="tecosm_marker_url" value="">
-        <p class="description">Incolla qui l'URL dell'icona (es. dalla Libreria Media). Dimensioni consigliate: 32x32 pixel.</p>
+        <p class="description"><?php esc_html_e( 'Incolla qui l\'URL dell\'icona (es. dalla Libreria Media). Dimensioni consigliate: 32x32 pixel.', 'tecosm' ); ?></p>
     </div>
     <?php
 }
@@ -145,10 +155,10 @@ function tecosm_edit_category_marker_field( $term ) {
     $marker_url = get_term_meta( $term->term_id, 'tecosm_marker_url', true );
     ?>
     <tr class="form-field">
-        <th scope="row" valign="top"><label for="tecosm_marker_url">URL Icona Mappa</label></th>
+        <th scope="row" valign="top"><label for="tecosm_marker_url"><?php esc_html_e( 'URL Icona Mappa', 'tecosm' ); ?></label></th>
         <td>
             <input type="text" name="tecosm_marker_url" id="tecosm_marker_url" value="<?php echo esc_attr( $marker_url ); ?>">
-            <p class="description">Incolla qui l'URL dell'icona. Se lasciato vuoto, verrà usato il Pin blu standard.</p>
+            <p class="description"><?php esc_html_e( 'Incolla qui l\'URL dell\'icona. Se lasciato vuoto, verrà usato il Pin blu standard.', 'tecosm' ); ?></p>
         </td>
     </tr>
     <?php
@@ -238,7 +248,7 @@ function tecosm_global_map_shortcode() {
     ?>
     
     <div style="margin-bottom: 15px;">
-        <input type="text" id="tecosm-search" placeholder="Cerca un evento..." style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 16px; box-sizing: border-box;">
+        <input type="text" id="tecosm-search" placeholder="<?php esc_attr_e( 'Cerca un evento...', 'tecosm' ); ?>" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px; font-size: 16px; box-sizing: border-box;">
     </div>
 
     <div id="<?php echo esc_attr( $map_id ); ?>" style="width: 100%; height: <?php echo esc_attr( $map_height ); ?>; z-index: 1; border: 1px solid #ddd; border-radius: 4px;"></div>
